@@ -1,14 +1,8 @@
-plugins {
-    id 'com.android.application' version '7.5' apply false
-    id 'com.android.library' version '7.5' apply false
+android {
+  // ...
 }
-task assembleDebug(type: Exec, dependsOn: 'assembleDebugAndroidTest') {
-  // Génère l'APK de débogage
-  executable './gradlew'
-  args 'assembleDebug'
-}
-task assembleRelease(type: Exec, dependsOn: 'assembleReleaseAndroidTest') {
-  // Génère l'APK de release
-  executable './gradlew'
-  args 'assembleRelease'
+
+task assembleApk(type: Exec, dependsOn: 'assembleDebug') {
+  executable = 'sh'
+  args = ['-c', './gradlew assembleDebug']
 }
