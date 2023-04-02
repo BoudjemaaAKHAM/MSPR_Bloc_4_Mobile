@@ -1,5 +1,5 @@
 // Appliquer le plugin Android
-apply plugin: 'com.android.application'
+// apply plugin: 'com.android.application'
 
 // Configurer les paramètres de build pour Android
 android {
