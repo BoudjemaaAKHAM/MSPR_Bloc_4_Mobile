@@ -1,3 +1,7 @@
+plugins {
+    id 'com.android.application' version '7.5' apply false
+    id 'com.android.library' version '7.5' apply false
+}
 task assembleDebug(type: Exec, dependsOn: 'assembleDebugAndroidTest') {
   // Génère l'APK de débogage
   executable './gradlew'
