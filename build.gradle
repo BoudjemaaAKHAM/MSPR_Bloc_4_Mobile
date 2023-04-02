@@ -1,6 +1,51 @@
+// Appliquer le plugin Android
+apply plugin: 'com.android.application'
+
+// Configurer les paramètres de build pour Android
 android {
-  // ...
+    compileSdkVersion 31
+    buildToolsVersion "31.0.0"
+
+    defaultConfig {
+        applicationId "com.example.myapp"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 }
+
+// Ajouter les dépendances de votre projet
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+
+    // Ajouter d'autres dépendances ici
+}
+
+// Configurer les repositories pour récupérer les dépendances
+repositories {
+    google()
+    mavenCentral()
+}
+
+// Ajouter des configurations supplémentaires pour votre projet
+// Par exemple, la configuration de la tâche de génération de l'APK
+// Pour cela, vous pouvez ajouter :
+// android.applicationVariants.all { variant ->
+//    variant.outputs.all {
+//        outputFileName = "${variant.name}-${variant.versionName}.apk"
+//    }
+// }
 
 task assembleApk(type: Exec, dependsOn: 'assembleDebug') {
   executable = 'sh'
