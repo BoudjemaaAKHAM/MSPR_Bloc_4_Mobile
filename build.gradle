@@ -18,3 +18,8 @@ task assembleRelease(type: Exec, dependsOn: 'assembleReleaseAndroidTest') {
   executable './gradlew'
   args 'assembleRelease'
 }
+
+compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
