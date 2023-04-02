@@ -7,3 +7,12 @@ task assembleApk(type: Exec, dependsOn: 'assembleDebug') {
   executable = 'sh'
   args = ['-c', './gradlew assembleDebug']
 }
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    testImplementation 'junit:junit:4.12'
+}
