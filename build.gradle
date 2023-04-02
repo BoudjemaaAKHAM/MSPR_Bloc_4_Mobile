@@ -4,10 +4,6 @@ plugins {
     id 'com.android.library' version '7.4.2' apply false
 }
 
-android {
-  // ...
-}
-
 task assembleDebug(type: Exec, dependsOn: 'assembleDebugAndroidTest') {
   // Génère l'APK de débogage
   executable './gradlew'
@@ -19,7 +15,3 @@ task assembleRelease(type: Exec, dependsOn: 'assembleReleaseAndroidTest') {
   args 'assembleRelease'
 }
 
-compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-}
