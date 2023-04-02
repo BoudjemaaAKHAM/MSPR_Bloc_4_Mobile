@@ -8,8 +8,3 @@ task assembleRelease(type: Exec, dependsOn: 'assembleReleaseAndroidTest') {
   executable './gradlew'
   args 'assembleRelease'
 }
-
-compileJava {
-    sourceCompatibility = '17'
-    targetCompatibility = '17'
-}
