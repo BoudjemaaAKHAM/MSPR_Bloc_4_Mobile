@@ -26,7 +26,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp"
-        android:src="@mipmap/logocafe" />
+        android:src="@mipmap/logocafe_round" />
 
     <Button
         android:id="@+id/Btn_Product"
