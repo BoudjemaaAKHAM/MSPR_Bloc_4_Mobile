@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".Menu">
 
 
     <Button
@@ -76,5 +76,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="02dp"
         android:layout_marginTop="52dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOUVELLE VERSION"
+        android:textColor="#FFEB3B" />
 
 </RelativeLayout>
