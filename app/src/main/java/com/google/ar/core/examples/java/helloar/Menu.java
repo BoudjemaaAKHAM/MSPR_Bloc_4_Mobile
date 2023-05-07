@@ -8,7 +8,6 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,9 +21,7 @@ import com.google.zxing.integration.android.IntentResult;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.Socket;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -44,7 +41,6 @@ public class Menu extends AppCompatActivity {
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT="text";
-
     public static final String STATET= "state";
 
 
@@ -56,7 +52,6 @@ public class Menu extends AppCompatActivity {
     Button BtnLogOut;
     Button BtnProduct;
     Button BtnScan;
-
     TextView LoggedUser;
 
 
@@ -80,9 +75,6 @@ public class Menu extends AppCompatActivity {
         textView.setText("User Connected : " + text);
         updateViews(text);
         BtnProduct.setEnabled(state);
-
-
-
 
         BtnLogOut.setOnClickListener(v ->
         {
@@ -108,7 +100,6 @@ public class Menu extends AppCompatActivity {
                 intentIntegrator.initiateScan();
             }
         });
-
 
         BtnProduct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,6 +144,7 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateViews(String user) {
         TextView textView = (TextView) findViewById(R.id.Logged);
         textView.setText("User Connected : " + user);
@@ -192,8 +184,6 @@ public class Menu extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-
-
         editor.putString(TEXT,log);
         editor.putBoolean(STATET,logg);
 
@@ -214,8 +204,8 @@ public class Menu extends AppCompatActivity {
     };
 
     private void askAPI(String token) {
-        String urlString = "http://13.53.243.55:444/api/v1/products";
-        //String urlString = "https://www.google.com";
+        //String urlString = "http://13.53.243.55:444/api/v1/products";
+        String urlString = "https://www.google.com";
 
         int responseCode = 0;
         String concat = null;
