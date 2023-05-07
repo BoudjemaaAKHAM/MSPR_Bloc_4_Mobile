@@ -26,9 +26,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    testOptions {
-        unitTests.includeAndroidResources = true
-        unitTests.returnDefaultValues = true
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -43,11 +42,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
-
-    // Dépendances pour les tests unitaires
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:3.11.2'
-    testImplementation 'androidx.test:core-ktx:1.4.0'
-    testImplementation 'androidx.test.ext:junit-ktx:1.1.3'
-    testImplementation 'androidx.arch.core:core-testing:2.1.0'
 }
