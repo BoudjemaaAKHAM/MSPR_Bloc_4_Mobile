@@ -180,6 +180,8 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
   private final float[] worldLightDirection = {0.0f, 0.0f, 0.0f, 0.0f};
   private final float[] viewLightDirection = new float[4]; // view x world light direction
 
+  int chiffreUnites;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -199,12 +201,11 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
     depthSettings.onCreate(this);
     instantPlacementSettings.onCreate(this);
     ImageButton settingsButton = findViewById(R.id.settings_button);
-    TextView productname2 = findViewById(R.id.product_name2);
     Button BtnProduct = findViewById(R.id.Btn_Product);
     Bundle b = getIntent().getExtras();
-    int value = -1; // or other values
+    String value = null; // or other values
     if(b != null)
-      value = b.getInt("key");
+      value = b.getString("name");
     BtnProduct.setOnClickListener(
             new View.OnClickListener() {
               @Override
@@ -214,7 +215,15 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
             });
 
     TextView textView = (TextView) findViewById(R.id.product_name2);
-    textView.setText("Product : "+value);
+    textView.setText("P: "+value);
+
+
+    String[] parts = value.split(",");
+    String valueBeforeComma = parts[0].trim(); // enlever les espaces éventuels avant et après la valeur
+    System.out.println(valueBeforeComma); // affiche "84"
+    int nombre = Integer.valueOf(valueBeforeComma);
+    chiffreUnites = nombre % 10; // renvoie 4
+    Log.d(TAG, "chiffre unité:"+ chiffreUnites);
 
 
     settingsButton.setOnClickListener(
@@ -427,7 +436,7 @@ public class HelloArActivity extends AppCompatActivity implements SampleRender.R
       virtualObjectAlbedoTexture =
           Texture.createFromAsset(
               render,
-              "models/pawn_albedo.png",
+              "models/"+chiffreUnites+".png",
               Texture.WrapMode.CLAMP_TO_EDGE,
               Texture.ColorFormat.SRGB);
       virtualObjectAlbedoInstantPlacementTexture =

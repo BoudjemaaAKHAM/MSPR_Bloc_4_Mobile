@@ -34,14 +34,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:text="Product List" />
-
-
-
 
     <Button
         android:id="@+id/Btn_LogOut"
@@ -52,6 +48,16 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="2dp"
         android:text="LogOut" />
+
+    <Button
+        android:id="@+id/Btn_Refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="55dp"
+        android:text="Refresh Data" />
 
     <TextClock
         android:id="@+id/textClock"
@@ -76,6 +82,17 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="02dp"
         android:layout_marginTop="52dp" />
+
+    <TextView
+        android:id="@+id/LastRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="8sp"
+        android:textColor="#A6A6A6"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="72dp" />
 
     <TextView
         android:id="@+id/textView"
