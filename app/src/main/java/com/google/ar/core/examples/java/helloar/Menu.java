@@ -267,12 +267,12 @@ public class Menu extends AppCompatActivity {
     }
 
     private void askAPI(String token) {
-        String urlString = "https://615f5fb4f7254d0017068109.mockapi.io/api/v1/products";
-        // String urlString = "https://16.16.4.35:444/api/v1/products";
+        //String urlString = "https://615f5fb4f7254d0017068109.mockapi.io/api/v1/products";
+        String urlString = "https://16.16.74.191:444/api/v1/products";
         int responseCode = 0;
         try {
             // désactive la vérification du certificat SSL car auto-signé
-            // disableSSLCertificateChecking();
+            disableSSLCertificateChecking();
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
