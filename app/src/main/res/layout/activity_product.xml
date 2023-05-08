@@ -10,6 +10,7 @@
         android:id="@+id/listProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="50dp"
         android:layout_alignParentTop="true">
 
@@ -32,6 +33,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="17dp"
         android:layout_marginEnd="145dp"
         android:text="Liste des produits :" />
